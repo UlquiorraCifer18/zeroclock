@@ -7,7 +7,7 @@ if(isset($_SESSION['name'])){
 
     echo $chatlogloc;
 
-    $text_message = "<div class='container1'><img src='System Icons\Z-Logo-removebg-preview.png' alt='Avatar' style='width:100%;'>"."<p>".stripslashes(htmlspecialchars($text))."</p>"."<span class='time-right1'>".date("g:i A")." <b class='user-name'>".$_SESSION['name']."</b></span>  "."<br></div>";    
+    $text_message = "<div class='container1'><img src='System Icons\Header\Screenshot_2022-07-04_121012-removebg-preview.png' alt='Avatar' style='width:100%;'>"."<p>".stripslashes(htmlspecialchars($text))."</p>"."<span class='time-right1'>".date("g:i A")." <b class='user-name'>".$_SESSION['name']."</b></span>  "."<br></div>";    
     file_put_contents($chatlogloc, $text_message, FILE_APPEND | LOCK_EX);    
 
     if(isset($_POST['qID']) && $questionID == 1){

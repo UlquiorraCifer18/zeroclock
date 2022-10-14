@@ -37,6 +37,7 @@ session_start();
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 		<link type="text/css" rel="stylesheet" href="css/accountbtn.css"/>
+    <link type="text/css" rel="stylesheet" href="css/custom.css"/>
 		
 		
 		
@@ -246,9 +247,9 @@ li{
 }
 .chats{
   position: fixed;
-  left: 865px;
+  left: 73%;
   right: 0;
-  margin-top: 206px;
+  margin-top: 5%;
   
 }
 .chat{

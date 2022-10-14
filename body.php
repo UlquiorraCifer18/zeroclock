@@ -277,7 +277,7 @@
 		</div>
 		                <!-- Chat button--> 
 						<div class="section mainn mainn-raised b">
-                <button type="button" class="btn btn-dark btn-floating clearfix"  id="btn" style="width: 100px; height: 40px; padding: 7px; font-weight:bold;width: 100px; font-family: 'Archivo Black'; position" id="btn" data-target="#chatb" data-toggle="modal">Chat&nbsp;<i class="far fa-comment-alt"></i>
+                <button type="button" class="btn btn-dark btn-floating clearfix" style="width: 100px; height: 40px; padding: 7px; font-weight:bold;width: 100px; font-family: 'Archivo Black'; position" id="btn" data-target="#chatb" data-toggle="modal">Chat&nbsp;<i class="far fa-comment-alt"></i>
                 </button>
 				</div>
                 <!-- !Chat Button-->
@@ -290,9 +290,9 @@
                     <p class="modal-title text-center" id="chatlabel" style="font-weight:bold;"><img src="System Icons\white.png" alt="" width="30" height="20">Zero O'clock Prints</p>
                   </div>
                   <div style="background-color: white; border-width: thin;">
-					<div id="chatbox">
-					</div>
-				  </div>
+                    <div id="chatbox">
+                    </div>    
+                  </div>
                   <div class="questions modal-body justify-content">
 				  <h5 class="text-center" id="chatlabel" style="padding-top: 10px; font-weight:bold; color: white;">Question</h5>
                   <p class="solid"><a id="btnQ1" style="text-decoration: none; color: #ffffff; font-weight: bold; padding:5px 10px; display:block;" href="#">Payment Option<i class="fa-solid fa-paper-plane" style="float: right;"></i></a></p>
@@ -318,7 +318,9 @@
 	<?php
  		if(isset($_SESSION["uid"])){
 	 		$chatlogloc = $_SESSION["uid"]."_log.html"; 
- 		}
+ 		}else{
+      
+    }
 	?>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
