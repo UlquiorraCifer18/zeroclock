@@ -8,7 +8,7 @@ $user_data = check_login($con);
 ?>
 
 <style>
-form{
+#form1{
   margin-left: 300px;
   margin-right: 300px;
   margin-top: 50px;
@@ -28,8 +28,11 @@ hr#hr2{
 
   </style>
 
+<section class="section section mainn mainn-raised b">
+<div class="container-fluid">	
+  
 <!-- My Profile -->
-<form action="editacc.php" method="post">
+<form action="editacc.php" method="post" id="form1">
   <div class="form-group">
     <span><h3><i class="fa fa-user-circle"></i>&nbsp;My Account </h3></span><hr id="hr2">
     <label for="name"><i class="fa-solid fa-id-badge float-left"></i>&nbsp;Name: </label>
@@ -61,8 +64,7 @@ hr#hr2{
     Female
   </label>
 </div>
-</div>
-  </div>
+
   <div class="form-group">
     <label for="bday1"><i class="fa-solid fa-cake-candles float-left"></i>&nbsp;Birthday:</label>
     <input type="date" class="form-control" id="birthday" name="dateofbirth" value="<?php echo $user_data ['birthday'];?>" placeholder="Date of Birth">
@@ -78,6 +80,8 @@ hr#hr2{
   <hr id="hr2">
   <input type="submit" class="btn" id="editbtn" style="float:right;" value="Edit"></input><br />
 </form>
+</div>
+</setion>
 
 <!-- !My Profile -->
 

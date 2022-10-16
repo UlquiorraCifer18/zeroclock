@@ -20,17 +20,17 @@ if (isset($_POST["login_user_with_product"])) {
 				<!-- row -->
 				
 
-					<div class="login-marg">
+					<div class="login-marg" >
 						<!-- Billing Details -->
 						
 						
 						<!-- /Billing Details -->
 						
 						
-								<form onsubmit="return false" id="login" class="login100-form ">
-									<div class="billing-details jumbotron">
-                                    <div class="section-title">
-                                        <h5 class="login100-form-title p-b-49" >Login </h5>
+								<form onsubmit="return false" id="login" class="login100-form " style="font-size: 12px;">
+									<div class="billing-details jumbotron" style="height: 85vh;">
+                                    <div class="section-title" >
+                                        <p class="login100-form-title " style="font-family: 'Archivo Black'; margin-top: -50px; font-size: 20px;">Login </p>
 										<a class="btn primary-btn" style="background-color: #5a7dc7; color: white; width: 100%;" href="#!" role="button">
                     					<h6 class="modal-title text-center" id="mtitle" style="font-weight:bold;"><i class="fab fa-google"> </i> LOGIN WITH GMAIL</h6></a>
                     					<br><br>
@@ -41,34 +41,30 @@ if (isset($_POST["login_user_with_product"])) {
                                    
                                     
                                     <div class="form-group">
-                                       <label for="email">Email</label>
-                                        <input class="input input-borders" type="email" name="email" placeholder="Email" id="password" required>
+                                        <input class="input input-borders" type="email" name="email" placeholder="Email" id="EMail" required>
                                     </div>
                                     
                                     <div class="form-group">
-                                       <label for="email">Password</label>
-                                        <input class="input input-borders" type="password" name="password" placeholder="password" id="password" required>
+                                        <input class="input input-borders" type="password" name="password" placeholder="Password" id="password" required>
                                     </div>
 									
 									<span><input type="checkbox" class="form-check-input float-start" id="log">&nbsp;Remember me? 
 										</span>
-                                    <div class="text-pad" >
 
-                                       <span><a href="#" class="float-end">
+                                       <span><a href="#" class="float-end" style="margin-left: 130px;">
                                            Forgot Password ?
-                                       </a></span>
+                                       </a></span><br><br>
                                         
-                                    </div>
                                     <div class="text-center">
-                                        <input class="primary-btn btn-block" style="width: 200px;"  type="submit" onclick="window.location.href='index.php'" Value="Login"><br>
+                                        <input class="primary-btn btn-block" style="width: 150px;"  type="submit" onclick="window.location.href='index.php'" Value="Login"><br><br>
 									</div>
 
                                         <div class="panel-footer">
 											<a href="admin/index.php">
-												<br><h4 class="text-center">Log in as Admin</h4>
-											</a><br>
-											<h6 class="text-center">Don't have an account? <a href="" data-toggle="modal" data-target="#Modal_register">Register</a></h6>
-											<div class="alert alert-danger"><h4 id="e_msg"></h4></div></div>
+												<h5 class="text-center">Log in as Admin</h5>
+											</a>
+											<h6 class="text-center">Don't have an account? <a href="" data-toggle="modal" data-target="#Modal_register" style="color: red;">Register</a></h6>
+											<div class="alert alert-danger" ><h4 id="e_msg"></h4></div></div>
                                     
                                     	
                                         
