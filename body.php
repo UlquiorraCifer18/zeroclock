@@ -1,3 +1,7 @@
+<style>
+
+</style>
+
 <div class="section mainn mainn-raised b" style="width:100%;">
 		<div class="text-center position-absolute">
 		<h1 style="font-family: 'Digital-7 Mono', sans-serif;">00:00</h1>
@@ -273,7 +277,7 @@
 		</div>
 		                <!-- Chat button--> 
 						<div class="section mainn mainn-raised b">
-                <button type="button" class="btn btn-dark btn-floating clearfix"  id="btn" style="width: 100px; height: 40px; padding: 7px; font-weight:bold;width: 100px; font-family: 'Archivo Black'; position" id="btn" data-target="#chatb" data-toggle="modal">Chat&nbsp;<i class="far fa-comment-alt"></i>
+                <button type="button" class="btn btn-dark btn-floating clearfix" style="width: 100px; height: 40px; padding: 7px; font-weight:bold;width: 100px; font-family: 'Archivo Black'; position" id="btn" data-target="#chatb" data-toggle="modal">Chat&nbsp;<i class="far fa-comment-alt"></i>
                 </button>
 				</div>
                 <!-- !Chat Button-->
@@ -286,20 +290,15 @@
                     <p class="modal-title text-center" id="chatlabel" style="font-weight:bold;"><img src="System Icons\white.png" alt="" width="30" height="20">Zero O'clock Prints</p>
                   </div>
                   <div style="background-color: white; border-width: thin;">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    </div>
-					
+                    <div id="chatbox">
+                    </div>    
+                  </div>
                   <div class="questions modal-body justify-content">
 				  <h5 class="text-center" id="chatlabel" style="padding-top: 10px; font-weight:bold; color: white;">Question</h5>
-                  <p class="solid">Payment Option<i class="fa-solid fa-paper-plane" style="float: right;"></i></p>
-                  <p class="solid">Size Chart<i class="fa-solid fa-paper-plane" style="float: right;"></i></p>
-                  <p class="solid">Track my Order<i class="fa-solid fa-paper-plane" style="float: right;"></i></p>
-                  <p class="solid">Estimated Date of Delivery<i class="fa-solid fa-paper-plane" style="float: right;"></i></p>
+                  <p class="solid"><a id="btnQ1" style="text-decoration: none; color: #ffffff; font-weight: bold; padding:5px 10px; display:block;" href="#">Payment Option<i class="fa-solid fa-paper-plane" style="float: right;"></i></a></p>
+                  <p class="solid"><a id="btnQ2" style="text-decoration: none; color: #ffffff; font-weight: bold; padding:5px 10px; display:block;" href="#">Size Chart<i class="fa-solid fa-paper-plane" style="float: right;"></i></a></p>
+                  <p class="solid"><a id="btnQ3" style="text-decoration: none; color: #ffffff; font-weight: bold; padding:5px 10px; display:block;" href="#">Track my Order<i class="fa-solid fa-paper-plane" style="float: right;"></i></a></p>
+                  <p class="solid"><a id="btnQ4" style="text-decoration: none; color: #ffffff; font-weight: bold; padding:5px 10px; display:block;" href="#">Estimated Date of Delivery<i class="fa-solid fa-paper-plane" style="float: right;"></i></a></p>
                   </div>
 				  <div class="foot input-group ">
                     <div class="input-group">
@@ -316,5 +315,63 @@
             </div>
 		<!-- /SECTION -->
 </div>
+	<?php
+ 		if(isset($_SESSION["uid"])){
+	 		$chatlogloc = $_SESSION["uid"]."_log.html"; 
+ 		}else{
+      
+    }
+	?>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            // jQuery Document
+            $(document).ready(function () {
+                $("#lightbtn").click(function () {
+                    var clientmsg = $("#textinput").val();					
+                    $.post("chatpost.php", { text: clientmsg });
+                    $("#textinput").val("");                    
+                    return false;
+                });
 
+				$("#btnQ1").click(function () {	
+                    $.post("chatpost.php", { text: "Payment Option", qID: 1 });                                     					
+                    return false;
+                });
+
+				$("#btnQ2").click(function () {	
+                    $.post("chatpost.php", { text: "Size Chart", qID: 2 });                                     					
+                    return false;
+                });
+
+				$("#btnQ3").click(function () {	
+                    $.post("chatpost.php", { text: "Track my Order", qID: 3 });                                     					
+                    return false;
+                });
+
+				$("#btnQ4").click(function () {	
+                    $.post("chatpost.php", { text: "Estimated Date of Delivery", qID: 4 });                                     					
+                    return false;
+                });
+ 
+                function loadLog() {
+                    var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
+ 
+                    $.ajax({
+                        url: "<?php echo $chatlogloc; ?>" ,
+                        cache: false,
+                        success: function (html) {
+                            $("#chatbox").html(html); //Insert chat log into the #chatbox div
+ 
+                            //Auto-scroll           
+                            var newscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height after the request
+                            if(newscrollHeight > oldscrollHeight){
+                                $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
+                            }   
+                        }
+                    });
+                }
+ 
+                setInterval (loadLog, 2500);
+            });
+        </script>
 		
