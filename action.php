@@ -128,8 +128,7 @@ if(isset($_POST["getProduct"])){
 										<h3 class='product-name header-cart-item-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
 										<h4 class='product-price header-cart-item-info'>₱ $pro_price</h4>
 										<div class='product-btns'>
-											<button class='add-to-wishlist'><i class='fa fa-heart-o'></i><span class='tooltipp'>add to wishlist</span></button>
-											<button class='quick-view'><i class='fa fa-eye'></i><span class='tooltipp'>quick view</span></button>
+
 										</div>
 									</div>
 									<div class='add-to-cart'>
@@ -184,8 +183,6 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 										<h3 class='product-name header-cart-item-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
 										<h4 class='product-price header-cart-item-info'>₱ $pro_price</h4>
 										<div class='product-btns'>
-											<button class='add-to-wishlist' tabindex='0'><i class='fa fa-heart-o'></i><span class='tooltipp'>add to wishlist</span></button>
-											<button class='quick-view' ><i class='fa fa-eye'></i><span class='tooltipp'>quick view</span></button>
 										</div>
 									</div>
 									<div class='add-to-cart'>
@@ -356,7 +353,7 @@ if (isset($_POST["Common"])) {
 	               <table id="cart" class="table table-hover table-condensed" id="">
     				<thead>
 						<tr>
-							<th style="width:50%">Product</th>
+							<th style="width:60%">Product</th>
 							<th style="width:10%">Price</th>
 							<th style="width:8%">Quantity</th>
 							<th style="width:7%" class="text-center">Subtotal</th>
@@ -383,7 +380,7 @@ if (isset($_POST["Common"])) {
 								<div class="row">
 								
 									<div class="col-sm-4 "><img src="product_images/'.$product_image.'" style="height: 70px;width:75px;"/>
-									<h4 class="nomargin product-name header-cart-item-name"><a href="product.php?p='.$product_id.'">'.$product_title.'</a></h4>
+									<span><p class="nomargin product-name header-cart-item-name" style="margin-top: -7rem; margin-left: 8rem;"><a href="product.php?p='.$product_id.'">'.$product_title.'</a></p></span>
 									</div>
 									<div class="col-sm-6">
 										<div style="max-width=50px;">
@@ -418,7 +415,7 @@ if (isset($_POST["Common"])) {
 				<tfoot>
 					
 					<tr>
-						<td><a href="store.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+						<td><br><a href="store.php" class="btn" style="background-color: black; color:white;"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
 						<td colspan="2" class="hidden-xs"></td>
 						<td class="hidden-xs text-center"><b class="net_total" ></b></td>
 						<div id="issessionset"></div>
@@ -428,7 +425,7 @@ if (isset($_POST["Common"])) {
 				if (!isset($_SESSION["uid"])) {
 					echo '
 					
-							<a href="" data-toggle="modal" data-target="#Modal_register" class="btn btn-success">Ready to Checkout</a></td>
+							<br><a href="" data-toggle="modal" data-target="#Modal_register" class="btn" style="background-color: #8cb925;">Ready to Checkout</a></td>
 								</tr>
 							</tfoot>
 				
@@ -463,7 +460,8 @@ if (isset($_POST["Common"])) {
 									<input type="hidden" name="cancel_return" value="http://localhost/myfiles/public_html/cancel.php"/>
 									<input type="hidden" name="currency_code" value="USD"/>
 									<input type="hidden" name="custom" value="'.$_SESSION["uid"].'"/>
-									<input type="submit" id="submit" name="login_user_with_product" name="submit" class="btn btn-success" value="Ready to Checkout">
+									<br>
+									<a name="login_user_with_product" class="btn" data-toggle="modal" data-target="#checkouts" style="background-color: #8cb925;">Ready to Checkout</a>
 									</form></td>
 									
 									</tr>

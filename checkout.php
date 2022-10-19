@@ -45,13 +45,7 @@ include "header.php";
   border-radius: 3px;
 }
 
-input[type=text] {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
+
 
 label {
   margin-bottom: 10px;
@@ -274,7 +268,7 @@ span.price {
 				}
 				?>
 				<!DOCTYPE html>
-<html lang="en">
+				<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -287,7 +281,25 @@ span.price {
   <div id="paypal-button-container"></div>
 
   <script>
+	paypal.Buttons({
+      createOrder: function(data, actions){
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '370'
+            }
+          }]
+        })
+      },
+      onAprove: function(data, actions){
+        console.log('Data: ' + data);
+        console.log('Action: ' + actions);
+        return actions.order.capture().then(function(details){
+          console.log(details);
+        })
+      }
 
+    }).render('#paypal-button-container');
   </script>
   
 </body>
@@ -298,7 +310,22 @@ span.price {
 	</div>
 </section>
 
-		
+<div></div><div></div><!-- Small modal -->
+<div tabindex="-1" class="modal bs-example-modal-sm" id="checkouts"role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+      <div class="modal-header d-block">
+        <span style="display: block;"><h4 class="text-center">Logout</h4></span>
+      
+                          
+                        </div>
+      <div class="modal-body"><i class="fa fa-question-circle"></i> Are you sure you want to log-out?</div>
+      <div class="modal-footer" style="margin-right: 1.2em;"><a class="btn btn-dark" id="b" href="logout.php">Logout</a>
+      <a class="btn btn-danger" data-dismiss="modal" id="b2">Cancel</a></div>
+    </div>
+  </div>
+</div>
+
 <?php
 include "footer.php";
 ?>

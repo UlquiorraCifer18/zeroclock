@@ -80,17 +80,14 @@ include "header.php";
                                     <div class="product-preview">
                                         <img src="product_images/'.$row['product_image'].'" alt="">
                                     </div>
-
                                     <div class="product-preview">
-                                        <img src="product_images/'.$row['product_image'].'" alt="">
+                                        <img src="product_images/'.$row['product_image2'].'" alt="">
                                     </div>
-
                                     <div class="product-preview">
-                                        <img src="product_images/'.$row['product_image'].'" alt="">
+                                        <img src="product_images/'.$row['product_image3'].'" alt="">
                                     </div>
-
                                     <div class="product-preview">
-                                        <img src="product_images/'.$row['product_image'].'" alt="">
+                                        <img src="product_images/'.$row['product_image4'].'" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -100,21 +97,17 @@ include "header.php";
                                     <div class="product-preview">
                                         <img src="product_images/'.$row['product_image'].'" alt="">
                                     </div>
-
                                     <div class="product-preview">
-                                        <img src="product_images/'.$row['product_image'].'" alt="">
+                                        <img src="product_images/'.$row['product_image2'].'" alt="">
                                     </div>
-
                                     <div class="product-preview">
-                                        <img src="product_images/'.$row['product_image'].'g" alt="">
+                                        <img src="product_images/'.$row['product_image3'].'" alt="">
                                     </div>
-
                                     <div class="product-preview">
-                                        <img src="product_images/'.$row['product_image'].'" alt="">
+                                        <img src="product_images/'.$row['product_image4'].'" alt="">
                                     </div>
                                 </div>
                             </div>
-
                                  
 									';
                                     
@@ -144,7 +137,6 @@ include "header.php";
 								<span class="product-available">In Stock</span>
 							</div>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
 							<div class="product-options">
 								<label>
 									Size
@@ -153,13 +145,8 @@ include "header.php";
 									</select>
 								</label>
 								<label>
-									Color
-									<select class="input-select">
-										<option value="0">Red</option>
-									</select>
 								</label>
 							</div>
-
 							<div class="add-to-cart">
 								<div class="qty-label">
 									Qty
@@ -177,16 +164,12 @@ include "header.php";
 								
 								
 							</div>
-
 							<ul class="product-btns">
-								<li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
 							</ul>
-
 							<ul class="product-links">
 								<li>Category:</li>
 								<li><a href="#">T-shirt</a></li>
 							</ul>
-
 							<ul class="product-links">
 								<li>Share:</li>
 								<li><a href="https://web.facebook.com/zerooclockprints" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
@@ -194,23 +177,19 @@ include "header.php";
 								<li><a href="https://www.instagram.com/zerooclockprints/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
 								<li><a href="https://www.tiktok.com/@00oclockprints" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
 							</ul>
-
 						</div>
 					</div>
 									
 					
 					<!-- /Product main img -->
-
 					<!-- Product thumb imgs -->
 					
 					
 					
 					<!-- /Product thumb imgs -->
-
 					<!-- Product details -->
 					
 					<!-- /Product details -->
-
 					<!-- Product tab -->
 					<div class="col-md-12">
 						<div id="product-tab">
@@ -221,7 +200,6 @@ include "header.php";
 								<li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li>
 							</ul>
 							<!-- /product tab nav -->
-
 							<!-- product tab content -->
 							<div class="tab-content">
 								<!-- tab1  -->
@@ -233,7 +211,6 @@ include "header.php";
 									</div>
 								</div>
 								<!-- /tab1  -->
-
 								<!-- tab2  -->
 								<div id="tab2" class="tab-pane fade in">
 									<div class="row">
@@ -243,7 +220,6 @@ include "header.php";
 									</div>
 								</div>
 								<!-- /tab2  -->
-
 								<!-- tab3  -->
 								<div id="tab3" class="tab-pane fade in">
 									<div class="row">
@@ -330,7 +306,6 @@ include "header.php";
 											</div>
 										</div>
 										<!-- /Rating -->
-
 										<!-- Reviews -->
 										<div class="col-md-6">
 											<div id="reviews">
@@ -394,7 +369,6 @@ include "header.php";
 											</div>
 										</div>
 										<!-- /Reviews -->
-
 										<!-- Review Form -->
 										<div class="col-md-3 mainn">
 											<div id="review-form">
@@ -431,7 +405,6 @@ include "header.php";
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
-
 		<!-- Section -->
 		<div class="section main main-raised">
 			<!-- container -->
@@ -483,8 +456,7 @@ include "header.php";
 										<h3 class='product-name header-cart-item-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
 										<h4 class='product-price header-cart-item-info'>₱ $pro_price</h4>
 										<div class='product-btns'>
-											<button class='add-to-wishlist'><i class='fa fa-heart-o'></i><span class='tooltipp'>add to wishlist</span></button>
-											<button class='quick-view'><i class='fa fa-eye'></i><span class='tooltipp'>quick view</span></button>
+
 										</div>
 									</div>
 									<div class='add-to-cart'>
@@ -524,42 +496,41 @@ include "footer.php";
 ?>
  <!-- Chat button--> 
  <div class="section mainn mainn-raised b">
-                <button type="button" class="btn btn-dark btn-floating clearfix"  id="btn" style="width: 100px; height: 40px; padding: 7px; font-weight:bold;width: 100px; font-family: 'Archivo Black'; position" id="btn" data-target="#chatb" data-toggle="modal">Chat&nbsp;<i class="far fa-comment-alt"></i>
+                <button type="button" class="btn btn-dark btn-floating clearfix" style="width: 100px; height: 40px; padding: 7px; font-weight:bold;width: 100px; font-family: 'Archivo Black';" id="btn" data-target="#chatb" data-toggle="modal">Chat&nbsp;<i class="far fa-comment-alt"></i>
                 </button>
 				</div>
                 <!-- !Chat Button-->
 
 				<div class="modal fade modal-dialog float-right chats " id="chatb" tabindex="-1" aria-labelledby="chatlabel" aria-hidden="true" role="dialog">
-              <div class="modal-dialog float-lg-right">
-                <div class="modal-content chat">
+              <div class="modal-dialog float-lg-right" style="position: fixed; bottom: 0; left: 68vmax;">
+                <div class="modal-content chat" >
                   <div class="modal-header d-block">
                     <button type="button" class="btn-close-white" data-dismiss="modal" aria-label="Close" style="margin-top: 15px; width: 15px; float: right;"></button>
                     <p class="modal-title text-center" id="chatlabel" style="font-weight:bold;"><img src="System Icons\white.png" alt="" width="30" height="20">Zero O'clock Prints</p>
                   </div>
                   <div style="background-color: white; border-width: thin;">
+                  <br>
                     <br>
                     <br>
                     <br>
                     <br>
                     <br>
-                    <br>
-                    </div>
-					
+                  </div>
                   <div class="questions modal-body justify-content">
-				  <h5 class="text-center" id="chatlabel" style="padding-top: 10px; font-weight:bold; color: white;">Question</h5>
-                  <p class="solid">Payment Option<i class="fa-solid fa-paper-plane" style="float: right;"></i></p>
-                  <p class="solid">Size Chart<i class="fa-solid fa-paper-plane" style="float: right;"></i></p>
-                  <p class="solid">Track my Order<i class="fa-solid fa-paper-plane" style="float: right;"></i></p>
-                  <p class="solid">Estimated Date of Delivery<i class="fa-solid fa-paper-plane" style="float: right;"></i></p>
+				  <h5 class="text-center" id="chatlabel" style="padding-top: .4em; font-weight:bold; color: white;">Question</h5>
+                  <p class="solid"><a id="btnQ1" style="text-decoration: none; color: #ffffff; font-weight: bold; padding:.4em .3em; display:block;" href="#">Payment Option<i class="fa-solid fa-paper-plane" style="float: right;"></i></a></p>
+                  <p class="solid"><a id="btnQ2" style="text-decoration: none; color: #ffffff; font-weight: bold; padding:.4em .3em; display:block;" href="#">Size Chart<i class="fa-solid fa-paper-plane" style="float: right;"></i></a></p>
+                  <p class="solid"><a id="btnQ3" style="text-decoration: none; color: #ffffff; font-weight: bold; padding:.4em .3em; display:block;" href="#">Track my Order<i class="fa-solid fa-paper-plane" style="float: right;"></i></a></p>
+                  <p class="solid"><a id="btnQ4" style="text-decoration: none; color: #ffffff; font-weight: bold; padding:.4em .3em; display:block;" href="#">Estimated Date of Delivery<i class="fa-solid fa-paper-plane" style="float: right;"></i></a></p>
                   </div>
 				  <div class="foot input-group ">
                     <div class="input-group">
                       <div class="custom-file">
                   <span style="position: absolute;"><input class="custom-file-input" type="file" id="files" style="float: left"><label class="custom-file-label" for="files"><i class="fa-solid fa-paperclip"></i></label></span>
                   </div></div>
-                  <textarea class="form-control" id="textinput" rows="1" placeholder="Send chat to Zero O'clock Prints..." style="width: 76.5%; margin-left: 45px;"></textarea>
+                  <textarea class="form-control" id="textinput" rows="1" placeholder="Send chat to Zero O'clock Prints..." style="width: 24.5vw; margin-left: 45px;"></textarea>
                   <div class="input-group"><span>
-                    <button class="btn btn-sm" type="button"  id="lightbtn" style="height:40px; font-family: 'Archivo Black'; float: right;">Send <i class="fa-solid fa-paper-plane"></i></button></label></span></div>
+                    <button class="btn btn-sm" type="button"  id="lightbtn" style="height: 4.4vh; weight: 4.4vh;font-family: 'Archivo Black';">Send <i class="fa-solid fa-paper-plane"></i></button></label></span></div>
                     </div>
                   </div>
                 </div>

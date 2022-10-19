@@ -33,12 +33,12 @@ session_start();
 		<!-- Font Awesome Icon -->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 		<link type="text/css" rel="stylesheet" href="css/accountbtn.css"/>
     <link type="text/css" rel="stylesheet" href="css/custom.css"/>
-		
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		
 		
          
@@ -126,7 +126,7 @@ session_start();
   #lightbtn{
     color: black;
     background-color: white;
-    height: 100px;
+    padding: .85em;
   }
 
 	*{
@@ -247,27 +247,32 @@ li{
 }
 .chats{
   position: fixed;
-  left: 73%;
-  right: 0;
-  margin-top: 5%;
+  left: 70em;
+  right: 1em;
+  margin-top: 18.8em;
+  width: 48vmax;
+  bottom: 0vmax;
   
 }
 .chat{
   background-color: black;
   color: white;
-  width: 500px;
+  width: 32.6vmax;
   height: auto;
+  bottom: 0vmax;
+  position: relative;
+
   
 }
 .chat input{
 	border: 0;
     clip: rect(1px, 1px, 1px, 1px);
-    height: 1px; 
-    margin: -1px;
+    height: 1vh; 
+    margin: .1em;
     overflow: hidden;
     padding: 0;
     position: absolute;
-    width: 1px;
+    width: 1vh;
 }
 .chat label {
 	display: block;
@@ -285,11 +290,11 @@ li{
 }
 
 .questions p{
-margin: 15px;
-padding-left: 10px;
-padding-right: 10px;
-padding-top: 5px;
-padding-bottom: 3px;
+margin: 1.2em;
+padding-left: .1em;
+padding-right: .1em;
+padding-top: .2em;
+padding-bottom: .2em;
 }
 .questions p.solid {
   outline-style: solid;
@@ -298,8 +303,10 @@ padding-bottom: 3px;
 
 }
 .questions p:hover{
-  color: black;
-  background-color: antiquewhite;
+  background-color: #ffffff;
+}
+.questions a:hover{
+  color: #000000;
 }
 .foot{
   margin: 0;
@@ -325,7 +332,56 @@ padding-bottom: 3px;
   margin-right: 8px;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');.container2{margin-top:50px;margin-bottom: 50px}.card{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;background-color: #fff;background-clip: border-box;border: 1px solid rgba(0, 0, 0, 0.1);border-radius: 0.10rem }.card-header:first-child{border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0}.card-header{padding: 0.75rem 1.25rem;margin-bottom: 0;background-color: #fff;border-bottom: 1px solid rgba(0, 0, 0, 0.1)}.track{position: relative;background-color: #ddd;height: 7px;display: -webkit-box;display: -ms-flexbox;display: flex;margin-bottom: 60px;margin-top: 50px}.track .step{-webkit-box-flex: 1;-ms-flex-positive: 1;flex-grow: 1;width: 25%;margin-top: -18px;text-align: center;position: relative}.track .step.active:before{background: #FF5722}.track .step::before{height: 7px;position: absolute;content: "";width: 100%;left: 0;top: 18px}.track .step.active .icon{background: #ee5435;color: #fff}.track .icon{display: inline-block;width: 40px;height: 40px;line-height: 40px;position: relative;border-radius: 100%;background: #ddd}.track .step.active .text{font-weight: 400;color: #000}.track .text{display: block;margin-top: 7px}.itemside{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;width: 100%}.itemside .aside{position: relative;-ms-flex-negative: 0;flex-shrink: 0}.img-sm{width: 80px;height: 80px;padding: 7px}ul.row, ul.row-sm{list-style: none;padding: 0}.itemside .info{padding-left: 15px;padding-right: 7px}.itemside .title{display: block;margin-bottom: 5px;color: #212529}p{margin-top: 0;margin-bottom: 1rem}.btn-warning{color: #ffffff;background-color: #ee5435;border-color: #ee5435;border-radius: 1px}.btn-warning:hover{color: #ffffff;background-color: #ff2b00;border-color: #ff2b00;border-radius: 1px}
+#logout{
+  margin-top: 15vmax;
+  margin-bottom: 15vmax;
+}
+#checkouts{
+  margin-top: 15vmax;
+  margin-bottom: 15vmax;
+}
+.container2{
+  margin: 5rem;
+}
+#navm{
+  background-color: black;
+  padding: 1em;
+  padding-left: 5em;
+  padding-right: 5em;
+  border-radius: 10px;
+  width: 70vw;
+  margin-left: 9vw;
+}
+
+.nav3>li+li {
+  margin-left: 15vw;
+}
+
+.nav3>li>a:hover, .nav3>li>a:focus, .nav3>li.active>a {
+  color: #edf2f3;  /* fallback for old browsers */
+
+
+  background-color: transparent;
+}
+
+.nav3>li>a:after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #eff5f7; 
+  background: -webkit-linear-gradient(to right, #e8f3f7, #00B4DB); 
+  background: linear-gradient(to right, #ebf9fd, #00B4DB);
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.nav3>li>a:hover:after, .nav3>li>a:focus:after, .nav3>li.active>a:after {
+  width: 100%;
+}
+.nav4>li+li {
+  margin-left: 15vw;
+}
 
 
         
@@ -390,7 +446,7 @@ padding-bottom: 3px;
                                   <div class="dropdownn-content">
                                     <a href="myprofile.php"><i class="fa fa-user-circle" aria-hidden="true" ></i>My Profile</a>
                                     <a href="myorder.php"><i class="fa fa-shopping-cart" aria-hidden="true" ></i>My Orders</a>
-                                    <a href="logout.php"  ><i class="fa fa-sign-in" aria-hidden="true"></i>Log out</a>
+                                    <a href="" data-toggle="modal" data-target="#logout"><i class="fa fa-sign-in" aria-hidden="true"></i>Log out</a>
                                     
                                   </div>
                                 </div>';
@@ -497,7 +553,7 @@ padding-bottom: 3px;
                           <!-- Modal content-->
                           <div class="modal-content" style="height: 100vh; margin-top: -30px;">
                             <div class="modal-header">
-                              <img src="System Icons\Z-Logo-removebg-preview.png" alt="" width="70" height="50">
+                              <img src="System Icons\Z-Logo-removebg-preview.png" alt="" width="60" height="40">
                               <button type="button" id="cl" class="close" data-dismiss="modal" data-background="false" tabindex="-1">&times;</button>
                               
                             </div>
@@ -513,5 +569,20 @@ padding-bottom: 3px;
 
                         </div>
                       </div>
+                      <div></div><div></div><!-- Small modal -->
+<div tabindex="-1" class="modal bs-example-modal-sm" id="logout"role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+      <div class="modal-header d-block">
+        <span style="display: block;"><h4 class="text-center">Logout</h4></span>
+      
+                          
+                        </div>
+      <div class="modal-body"><i class="fa fa-question-circle"></i> Are you sure you want to log-out?</div>
+      <div class="modal-footer" style="margin-right: 1.2em;"><a class="btn btn-dark" id="b" href="logout.php">Logout</a>
+      <a class="btn btn-danger" data-dismiss="modal" id="b2">Cancel</a></div>
+    </div>
+  </div>
+</div>
                       
 		

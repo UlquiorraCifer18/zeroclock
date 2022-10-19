@@ -51,12 +51,12 @@ if (isset($_POST["login_user_with_product"])) {
 									<span><input type="checkbox" class="form-check-input float-start" id="log">&nbsp;Remember me? 
 										</span>
 
-                                       <span><a href="#" class="float-end" style="margin-left: 130px;">
+                                       <span><a href="forgot-password.php" class="float-end" style="margin-left: 130px;">
                                            Forgot Password ?
                                        </a></span><br><br>
                                         
                                     <div class="text-center">
-                                        <input class="primary-btn btn-block" style="width: 150px;"  type="submit" onclick="window.location.href='index.php'" Value="Login"><br><br>
+										<input class="primary-btn btn-block" style="width: 150px;"  type="submit" Value="Login"><br><br>
 									</div>
 
                                         <div class="panel-footer">
