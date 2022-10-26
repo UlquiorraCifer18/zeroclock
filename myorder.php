@@ -1,5 +1,9 @@
 <?php
 include "header.php";
+include "db.php";
+include "functions.php";
+
+$order_track = order_track($con);
 ?>
 
 
@@ -22,11 +26,11 @@ include "header.php";
 <div class="jumbotron" style="margin-left: 9vmax; width: 70vmax;">
    <div id="one" class="hideMeBox" style="margin-left: 10vmax; margin-top: -2vmax; padding: -30vmax">
   <ul class="nav4 navbar-nav">
-    <li class="nav-item"><h6>Name and Description</h6></li>
-    <li class="nav-item" style="margin-left: 7vmax;"><h6 class="justify-content">Mode of Payment</h6></li>
-    <li class="nav-item" style="margin-left: 7vmax;"><h6 class="justify-content">Order <br>Date & Time</h6></li>
-    <li class="nav-item" style="margin-left: 7vmax;"><h6 class="justify-content">Quantity</h6></li>
-    <li class="nav-item" style="margin-left: 7vmax;"><h6 class="justify-content">Price</h6></li>
+    <li class="nav-item"><h6>Name and Description </h6><?php echo $order_track ['product_title'];?></li>
+    <li class="nav-item" style="margin-left: 2vmax;"><h6 class="justify-content">Mode of Payment</h6></li>
+    <li class="nav-item" style="margin-left: 2vmax;"><h6 class="justify-content">Order <br>Date & Time</h6><?php echo $order_track ['date_ordered'];?></li>
+    <li class="nav-item" style="margin-left: 2vmax;"><h6 class="justify-content">Quantity</h6></li>
+    <li class="nav-item" style="margin-left: 2vmax;"><h6 class="justify-content">Price</h6><?php echo $order_track ['product_price'];?></li>
 </ul>
   </div>
   <div id="two" class="hideMeBox2" style="margin-left: -10vmax; margin-top: -2vmax;">

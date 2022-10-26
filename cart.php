@@ -6,6 +6,7 @@ include "header.php";
  
 <section class="section">
 <div class="container-fluid">	
+				   <h4 style="margin-left: 15vmax; margin-top: 2vmax;"><img src="System Icons\Header\Screenshot_2022-07-04_120952-removebg-preview.png" alt="" width="28" height="22" style="margin-top: -0.6rem;">&nbsp;Order Summary</h4><br>
     <div id="cart_checkout">
       
     </div>
@@ -66,7 +67,6 @@ include "header.php";
               <button type="button" id="cl" class="close" data-dismiss="modal">×</button><br>
                  <br><h5 class="modal-title text-center" style="font-weight:bold;">Choose your Payment Method: </h5> <br><br>
                  <script src="https://www.paypal.com/sdk/js?client-id=AbrcebMeG6PmH2hQvjgRC_NqiX8qovHrbnmtpE43HdByjOOisFKZXWXZ4gxM-0sCVp2ulEUAtw8XqKNK"></script>
-</head>
 <body>
   
   <div id="paypal-button-container"></div>

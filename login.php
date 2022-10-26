@@ -58,7 +58,8 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 					
 					</script>";
 				} else {
-					header('Location: index.php'); // default page
+					//header('Location: index.php'); // default page
+					echo "<script> window.location.href='index.php'; </script>";
 				} 
 				
 			

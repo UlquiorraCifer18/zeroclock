@@ -50,16 +50,16 @@ hr#hr2{
     <label for="password1"><i class="fa-solid fa-lock float-left"></i>&nbsp;Password:</label>
     <input type="text" class="form-control" id="password1" name="password" value="<?php echo $user_data ['password'];?>" placeholder="Password">
   </div>
-    <label><i class="fa-solid fa-venus-mars float-start"></i> Gender: <?php echo $user_data ['gender'];?></label><br />
-    
+    <label><i class="fa-solid fa-venus-mars float-start"></i> Gender:</label><br />
+    <input type="text" class="form-control" name="gender" value="<?php echo $user_data ['gender'];?>" placeholder="Gender">
     <div class="form-check form-check-inline">
-  &nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="gender" id="Male" value="Male">
+  <input class="form-check-input" type="radio" name="gender" id="Male" value="Male">
   <label class="form-check-label" for="Male">
     Male
   </label>
 </div>
 <div class="form-check form-check-inline">
-&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="gender" id="Female" value="Female">
+<input class="form-check-input" type="radio" name="gender" id="Female" value="Female">
   <label class="form-check-label" for="Female">
     Female
   </label><br><br>

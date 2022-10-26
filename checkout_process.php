@@ -1,10 +1,11 @@
 <?php
 session_start();
 include "db.php";
+include "functions.php";
 if (isset($_SESSION["uid"])) {
 
 	$f_name = $_POST["firstname"];
-	$email = $_POST['email'];
+    $email = $_POST['email'];
 	$address = $_POST['address'];
     $city = $_POST['city'];
     $state = $_POST['state'];
@@ -33,11 +34,13 @@ if (isset($_SESSION["uid"])) {
         echo( mysqli_error($con));
     }
     
+    
+
 
 	$sql = "INSERT INTO `orders_info` 
-	(`order_id`,`user_id`,`f_name`, `email`,`address`, 
+	(`order_id`,`user_id`,`f_name`,`email`,`address`, 
 	`city`, `state`, `zip`, `cardname`,`cardnumber`,`expdate`,`prod_count`,`total_amt`,`cvv`) 
-	VALUES ($order_id, '$user_id','$f_name','$email', 
+	VALUES ($order_id, '$user_id','$f_name','$email',
     '$address', '$city', '$state', '$zip','$cardname','$cardnumberstr','$expdate','$total_count','$prod_total','$cvv')";
 
 
@@ -58,6 +61,23 @@ if (isset($_SESSION["uid"])) {
             $sql1="INSERT INTO `order_products` 
             (`order_pro_id`,`order_id`,`product_id`,`qty`,`amt`) 
             VALUES (NULL, '$order_id','$prod_id','$prod_qty','$sub_total')";
+
+$user_id = $_SESSION["uid"];
+$result = mysqli_query($con,"select first_name, email, product_title, product_price, product_image
+from user_info, products 
+where user_id=$user_id and product_id=$prod_id Limit 1")
+or die ("query 1 incorrect.....");
+
+while(list($cus_name,$email,$product_title,$product_price,$product_image)=mysqli_fetch_array($result))
+{	
+    $tracking_id = random_num(20);
+    $sql = "INSERT INTO `order_tracking` 
+    (`tracking_id`,`user_id`,`cus_name`,`email`,`address`,`city`,`state`,`zip`,`product_id`,`product_title`,`quantity`,`product_price`,`product_image`,`order_id`) 
+    VALUES ('$tracking_id','$user_id','$cus_name','$email','$address','$city','$state','$zip','$prod_id','$product_title','$prod_qty','$product_price','$product_image','$order_id')";
+    $run_query = mysqli_query($con,$sql);
+                        
+    echo"<script>window.location.href='myorder.php'</script>";
+}
             if(mysqli_query($con,$sql1)){
                 $del_sql="DELETE from cart where user_id=$user_id";
                 if(mysqli_query($con,$del_sql)){

@@ -382,6 +382,10 @@ padding-bottom: .2em;
 .nav4>li+li {
   margin-left: 15vw;
 }
+#cart{
+  margin-left: 15vmax;
+  width: 75vmax;
+}
 
 
         

@@ -37,3 +37,24 @@ function random_num($length){
     return $text;
 
 }
+
+function order_track($con){
+    if(isset($_SESSION['uid'])){
+
+        $id = $_SESSION['uid'];
+        $query = "select * from order_tracking where user_id = '$id' limit 1";
+
+        $result = mysqli_query($con,$query);
+
+        if($result && mysqli_num_rows($result)>0){
+
+            $user_data = mysqli_fetch_assoc($result);
+            return $user_data;
+        }
+    }
+
+    //REDIRECT TO HOMEPAGE
+    
+    //echo "<script>window.location.href='myprofile.php'; </script>";
+    die;
+}

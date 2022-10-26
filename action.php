@@ -400,7 +400,7 @@ if (isset($_POST["Common"])) {
 							<td data-th="Subtotal" class="text-center"><input type="text" class="form-control total" value="'.$product_price.'" readonly="readonly"></td>
 							<td class="actions" data-th="">
 							<div class="btn-group">
-								<a href="#" class="btn btn-info btn-sm update" update_id="'.$product_id.'"><i class="fa fa-refresh"></i></a>
+								<a href="#" class="btn btn-info btn-sm update" update_id="'.$product_id.'" style="background-color: black;"><i class="fa fa-refresh"></i></a>
 								
 								<a href="#" class="btn btn-danger btn-sm remove" remove_id="'.$product_id.'"><i class="fa fa-trash-o"></i></a>		
 							</div>							
@@ -415,9 +415,14 @@ if (isset($_POST["Common"])) {
 				<tfoot>
 					
 					<tr>
-						<td><br><a href="store.php" class="btn" style="background-color: black; color:white;"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-						<td colspan="2" class="hidden-xs"></td>
-						<td class="hidden-xs text-center"><b class="net_total" ></b></td>
+						<td colspan="5" class="hidden-xs"><p>Item(s):  </p>
+						<p>Shipping Fee:<p>	
+						<p>Discount:<p>	
+						<b> Total: <b class="net_total" style="margin-left: 60vmax;"></b></b>
+						</td> </tr>
+						<tr>
+						<td colspan="4"><br><a href="store.php" class="btn" style="background-color: black; color:white; border-radius: 10px; padding: 10px; font-family: Archivo Black;"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+						
 						<div id="issessionset"></div>
                         <td>
 							
@@ -425,7 +430,7 @@ if (isset($_POST["Common"])) {
 				if (!isset($_SESSION["uid"])) {
 					echo '
 					
-							<br><a href="" data-toggle="modal" data-target="#Modal_register" class="btn" style="background-color: #8cb925;">Ready to Checkout</a></td>
+							<a  href="" data-toggle="modal" data-target="#Modal_register" class="btn" style="background-color: black; color:white; border-radius: 10px; padding: 10px; font-family: Archivo Black;">Ready to Checkout</a></td>
 								</tr>
 							</tfoot>
 				
@@ -461,7 +466,7 @@ if (isset($_POST["Common"])) {
 									<input type="hidden" name="currency_code" value="USD"/>
 									<input type="hidden" name="custom" value="'.$_SESSION["uid"].'"/>
 									<br>
-									<a name="login_user_with_product" class="btn" data-toggle="modal" data-target="#checkouts" style="background-color: #8cb925;">Ready to Checkout</a>
+									<a name="login_user_with_product" class="btn" data-toggle="modal" data-target="#checkouts" style="background-color: black; color:white; border-radius: 10px; padding: 10px; font-family: Archivo Black;">Ready to Checkout</a>
 									</form></td>
 									
 									</tr>
@@ -512,6 +517,8 @@ if (isset($_POST["updateCartItem"])) {
 		exit();
 	}
 }
+
+
 
 
 
