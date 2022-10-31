@@ -1,33 +1,18 @@
 
      <div class="main-panel">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:void(0)" style=" font-family: 'Archivo Black';"><img src="../System Icons/white.png" alt="" width="70" height="50">Admin</a>
-            
+            <a class="navbar-brand simple-text logo-normal" href="javascript:void(0)" style=" font-family: 'Archivo Black'; margin-left: -5px;">
+            <img src="../System Icons/white.png" alt="" width="70" height="50">Zero O'clock</a>
+
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">person</i>
-                  
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                
-              </li>
-              <!-- your navbar here -->
-            </ul>
+          <div class="nav-item pull-right <?= ($activePage == '') ? 'active':''; ?>" style="cursor: pointer;"">
+            <a class="nav-link  "   onclick="window.location.href='../index.php'" >
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="color:#d22824;"class="material-icons">logout</i>
+              <p style="font-family: 'Archivo Black'; color:#d22824;">Logout</p>
+            </a>
           </div>
-        </div>
       </nav>
       

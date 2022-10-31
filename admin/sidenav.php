@@ -25,12 +25,13 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
     <script type="text/javascript"></script>
 
     <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/margin.css"/>
 </head>
 
 
 <body class="dark-edition">
   <div class="wrapper ">
-    <div class="sidebar" data-color="green"  data-image="./assets/img/sidebar-3.jpg">
+    <div class="sidebar" data-color="azure"  data-image="./assets/img/Z-Logo-removebg-preview.png"  alt="" width="70" height="50">
       <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -38,7 +39,6 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
   -->
       <div class="logo">
         <a href="" class="simple-text logo-normal" style=" font-family: 'Archivo Black';">
-        <img src="../System Icons/white.png" alt="" width="70" height="50">
           ADMIN
         </a>
       </div>
@@ -50,7 +50,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item <?= ($activePage == 'productlist') ? 'active':''; ?>"">
+          <li class="nav-item <?= ($activePage == 'productlist' || $activePage == 'prod_sort') ? 'active':''; ?>"">
             <a class="nav-link" href="productlist.php">
               <i class="material-icons">list</i>
               <p>Product List</p>
@@ -70,10 +70,16 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
               <p>Add Products</p>
             </a>
           </li>
-          <li class="nav-item <?= ($activePage == 'manageuser') ? 'active':''; ?>"">
+          <li class="nav-item <?= ($activePage == 'manageuser' || $activePage == 'user_sort') ? 'active':''; ?>"">
             <a class="nav-link" href="manageuser.php" >
-              <i class="material-icons">edit_user</i>
+              <i class="material-icons">account_box</i>
               <p>Manage User</p>
+            </a>
+          </li>
+          <li class="nav-item <?= ($activePage == 'archive') ? 'active':''; ?>"">
+            <a class="nav-link" href="archive.php" >
+              <i class="material-icons">inventory</i>
+              <p>Archive</p>
             </a>
           </li>
           <li class="nav-item <?= ($activePage == '') ? 'active':''; ?>"">
@@ -82,13 +88,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
               <p>Messages</p>
             </a>
           </li>
-          <br>
-          <li class="nav-item">
-            <a class="nav-link" onclick="window.location.href='../index.php'">
-              <i class="material-icons">logout</i>
-              <p>Logout</p>
-            </a>
-          </li>
+          
+
           <!-- <li class="nav-item active-pro ">
                 <a class="nav-link" href="./upgrade.html">
                     <i class="material-icons">unarchive</i>

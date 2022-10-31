@@ -4,13 +4,14 @@ session_start();
 include("../db.php");
 
 error_reporting(0);
-if(isset($_GET['action']) && $_GET['action']!="" && $_GET['action']=='delete')
-{
-$order_id=$_GET['order_id'];
+// if(isset($_GET['action']) && $_GET['action']!="" && $_GET['action']=='delete')
+// {
+// $id=$_GET['id'];
 
-/*this is delet query*/
-mysqli_query($con,"delete from orders where order_id='$order_id'")or die("delete query is incorrect...");
-} 
+// /*this is delet query*/
+
+// mysqli_query($con,"delete from order_tracking where id='$id'")or die("delete query is incorrect...");
+// } 
 
 ///pagination
 $page=$_GET['page'];
@@ -32,32 +33,81 @@ include "topheader.php";
         <div class="container-fluid">
           <!-- your content here -->
           <div class="col-md-14">
-            <div class="card ">
+          <div class="card ">
               <div class="card-header card-header-info">
-                <h4 class="card-title">Orders  / Page <?php echo $page;?> </h4>
+                <h4 class="card-title"> Manage Orders</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive ps">
+                <div class="col-md-7">
+                    <form action="" method="GET">
+                      <div class="input-group mb-3">
+                        <input type="text" name="search" required value="<?php if(isset($_GET['search'])){echo $_GET['search']; }?>" class="form-control" placeholder="Search">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                      </div>
+                    </form>
+                  </div>
                   <table class="table table-hover tablesorter " id="">
                     <thead class=" text-primary" style="font-family: Nunito;">
-                      <tr><th>Customer Name</th><th>Products</th><th>Contact | Email</th><th>Address</th><th>Details</th><th>Shipping</th><th>Time</th>
+                    <tr>
+                      <th>ID</th>
+                      <th>Tracking ID</th>
+                      <th>Order ID</th>
+                      <th>Product ID</th>
+                      <th>User ID</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Address</th>
+                      <th>City</th>
+                      <th>State</th>
+                      <th>Zip</th>
+                      <th>Date Ordered</th>
+                      <th>Estimated time of Delivery</th>
+                      <th>Product Name</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                      <th>Image</th>
+                      <th>Status</th>
                     </tr></thead>
                     <tbody style="font-family: Nunito;">
                       <?php 
-                        $result=mysqli_query($con,"select order_id, product_title, first_name, mobile, email, address1, address2, product_price,address2, qty from orders,products,user_info where orders.product_id=products.product_id and user_info.user_id=orders.user_id Limit $page1,10")or die ("query 1 incorrect.....");
+                      if (isset($_GET['search'])){
+                        $filtervalues = $_GET['search'];
+                        //i-add ang gender and birthday sa CONCAT, Pagka kompleto lahat ng details
+                        $result=mysqli_query($con,"SELECT * FROM order_tracking WHERE CONCAT(tracking_id,order_id,product_id,user_id,cus_name,email,address,city,state,zip,date_ordered,est_time,product_title,quantity,product_price,product_image,status) LIKE '%$filtervalues%'")or die ("query 1 incorrect.....");
+                        if(mysqli_num_rows($result) > 0){
+                          while(list($id,$tracking_id,$order_id,$product_id,$user_id,$cus_name,$email,$address,$city,$state,$zip,$date_ordered,$estimated_time,$product_title,$quantity,$price,$image,$status)=mysqli_fetch_array($result))
+                          {	
+                          echo "<tr><td>$id</td><td>$tracking_id</td><td>$order_id</td><td>$product_id</td><td>$user_id</td><td>$cus_name</td><td>$email</td><td>$address</td><td>$city</td><td>$state</td><td>$zip</td><td>$date_ordered</td><td>$estimated_time</td><td>$product_title</td><td>$quantity</td><td>$price</td><td>$image</td><td>$status</td>
+  
+                          <td>
+                          <a class=' btn btn-info' href='orderstatus.php?id=$id'>Status</a>
+                          </td>
+                          </tr>";
+                          }
+                      }else{
+                        ?>
+                            <tr>
+                              <td colspan="9">No Record Found</td>
+                            </tr>
+                          <?php
+                        }
+                        }else{
+                        $result=mysqli_query($con,"select * from order_tracking")or die ("query 1 incorrect.....");
 
-                        while(list($order_id,$p_names,$cus_name,$contact_no,$email,$address,$country,$details,$zip_code,$time,$quantity)=mysqli_fetch_array($result))
+                        while(list($id,$tracking_id,$order_id,$product_id,$user_id,$cus_name,$email,$address,$city,$state,$zip,$date_ordered,$estimated_time,$product_title,$quantity,$price,$image,$status)=mysqli_fetch_array($result))
                         {	
-                        echo "<tr><td>$cus_name</td><td>$p_names</td><td>$email<br>$contact_no</td><td>$address<br>ZIP: $zip_code<br>$country</td><td>$details</td><td>$quantity</td><td>$time</td>
+                        echo "<tr><td>$id</td><td>$tracking_id</td><td>$order_id</td><td>$product_id</td><td>$user_id</td><td>$cus_name</td><td>$email</td><td>$address</td><td>$city</td><td>$state</td><td>$zip</td><td>$date_ordered</td><td>$estimated_time</td><td>$product_title</td><td>$quantity</td><td>$price</td><td>$image</td><td>$status</td>
 
                         <td>
-                        <a class=' btn btn-danger' href='orders.php?order_id=$order_id&action=delete'>Delete</a>
-                        </td></tr>";
+                        <a class=' btn btn-info' href='orderstatus.php?id=$id'>Status</a>
+                        </td>
+                        </tr>";
                         }
+                      }
                         ?>
                     </tbody>
                   </table>
-                  
                 <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
               </div>
             </div>

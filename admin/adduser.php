@@ -55,6 +55,7 @@ mysqli_close($con);
                           <input type="email" name="email" id="email" class="form-control" required>
                         </div>
                       </div>
+                      
                       <div class="col-md-6">
                         <div class="form-group bmd-form-group">
                           <label class="bmd-label-floating">Password</label>
@@ -86,7 +87,7 @@ mysqli_close($con);
                       
                     </div>
                     
-                    <button type="submit" name="btn_save" id="btn_save" class="btn btn-primary pull-right">Update User</button>
+                    <button type="submit" name="btn_save" id="btn_save" class="btn btn-success pull-right">Add</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>

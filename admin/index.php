@@ -12,11 +12,11 @@ include "topheader.php";
          <div class="panel-body">
 		<a>
       <!-- Chart -->
-      <div class="graphBox">
-        <div class="box">
+      <div class="graphBox ">
+        <div class="box  navbar-dark bg-info">
         <div id="piechart"></div>
         </div>
-        <div class="box"></div>
+        <div class="box  navbar-dark bg-info  " ></div>
       </div>
       <script>
       google.charts.load('current', {'packages':['corechart']});
@@ -36,7 +36,7 @@ include "topheader.php";
         ]);
 
         var options = {
-          title: 'Item Sales'
+          title: '  Item Sales'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -60,15 +60,15 @@ include "topheader.php";
                 <div class="table-responsive ps">
                   <table class="table table-hover tablesorter " id="">
                     <thead class=" text-primary" style="font-family: Nunito;">
-                        <tr><th>ID</th><th>FirstName</th><th>LastName</th><th>Email</th><th>Password</th><th>Contact</th><th>Address</th><th>City</th>
+                    <tr><th>ID</th><th>FirstName</th><th>LastName</th><th>Gender</th><th>Birthday</th><th>Email</th><th>Contact Number</th><th>Address</th><th>City</th>
                     </tr></thead>
                     <tbody style="font-family: Nunito;">
                       <?php 
                         $result=mysqli_query($con,"select * from user_info")or die ("query 1 incorrect.....");
 
-                        while(list($user_id,$first_name,$last_name,$email,$password,$phone,$address1,$address2)=mysqli_fetch_array($result))
+                        while(list($user_id,$first_name,$last_name,$gender,$birthday,$email,$password,$mobile,$address1,$address2)=mysqli_fetch_array($result))
                         {	
-                        echo "<tr><td>$user_id</td><td>$first_name</td><td>$last_name</td><td>$email</td><td>$password</td><td>$phone</td><td>$address1</td><td>$address2</td>
+                        echo "<tr><td>$user_id</td><td>$first_name</td><td>$last_name</td><td>$gender</td><td>$birthday</td><td>$email</td><td>$mobile</td><td>$address1</td><td>$address2</td>
 
                         </tr>";
                         }
@@ -147,11 +147,23 @@ include "topheader.php";
               </div>
             </div>
           </div>
-           </div>
-          
+           </div><br>
+          <div class="navbar navbar-transparent border-0">
+           <form class="form-inline" method="post" action="generate_user_list.php">
+            <button type="submit" id="pdf" name="generate_pdf" class="btn btn-success" style="font-family: Nunito;"><i class="fa fa-pdf" aria-hidden="true"></i>
+            Generate PDF For User <i class='material-icons'>person</i></button>
+          </form>
            
+          <form class="form-inline" method="post" action="generate_product_list.php">
+            <button type="submit" id="pdf" name="generate_pdf" class="btn btn-success" style="font-family: Nunito;"><i class="fa fa-pdf" aria-hidden="true"></i>
+            Generate PDF For Product <i class='material-icons'>inventory_2</i> </button>
+          </form>
             
-          
+          <form class="form-inline pull-right" method="post" action="generate_sales_report.php">
+            <button type="submit" id="pdf" name="generate_pdf" class="btn btn-success" style="font-family: Nunito;"><i class="fa fa-pdf" aria-hidden="true"></i>
+            Generate PDF For Sales <i class='material-icons'>pie_chart</i></button>
+          </form>
+                      </div>
         </div>
       </div>
       <?php

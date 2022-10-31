@@ -60,8 +60,12 @@ include "topheader.php";
                     </div>
                     <div class="col-md-4">
                       <div class="">
-                        <label for="">Add Image</label>
-                        <input type="file" name="picture" required class="btn btn-fill btn-success" id="picture" >
+                        <label for="">Add Image</label><br>
+                        <input type="file" name="picture" required class="btn btn-fill btn-success" id="picture" style="font-family: Nunito;" >
+
+                        <br><br>
+                        <!--<input type="file" name="picture" id="file" required class="inputfile " id="picture"/>
+                      <label for="file" style=" padding:10px, 10px; margin: 10px; ">Choose a File..</label> -->
                       </div>
                     </div>
                      <div class="col-md-12">
@@ -117,8 +121,8 @@ include "topheader.php";
                   </div>
                 
               </div>
-              <div class="card-footer" style="font-family: Nunito;">
-                  <button type="submit" id="btn_save" name="btn_save" required class="btn btn-fill btn-primary">Update Product</button>
+              <div class="card-footer" >
+                  <button type="submit" id="btn_save" name="btn_save" required class="btn btn-fill btn-success" style="font-family: Nunito;">Add</button>
               </div>
             </div>
           </div>
